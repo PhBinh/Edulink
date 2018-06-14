@@ -13,22 +13,19 @@
 					<img src="https://image.flaticon.com/icons/png/512/306/306473.png">
 				</div>
 				<div class="col-md-12 col-sm-12 col-xs-12 user-login-box">
-					<!-- <div class="form-group">
-				  		<input type="text" class="form-control" placeholder="User Name" id="usr">
-					</div>
-					<div class="form-group">
-				  		<input type="text" class="form-control" placeholder="Password" id="usr">
-					</div>
-                    <a href="#" class="btn btn-defualt">Login</a> -->
-                    <form class="register-form">
+                    <form class="login-form">
+						<pre>
                             <label>Tên người dùng</label>
-                            <input type="text" class="form-control" placeholder="Tên người dùng...">
+                            <input type="text" class="form-control" #email placeholder="Tên người dùng...">
 
                             <label>Mật khẩu</label>
-                            <input type="password" class="form-control" placeholder="Mật khẩu...">
-                            <button class="btn btn-danger btn-block btn-round">Đăng nhập</button>
-                        </form>
+							<input type="password" class="form-control" #password placeholder="Mật khẩu...">
+							
+							<button class="btn btn-danger btn-block btn-round" (click)="signInByEmailAndPassword(email.value, password.value)">Đăng nhập</button>
+						</pre>
+					</form>
 				</div>
+				<!-- <button class= "btn btn-danger" (click)="signInWithGoogle()">test</button> -->
 				<div class="col-md-12 col-sm-12 col-xs-12 last-part">
 					<p>Quên mật khẩu?<a href="#"> Đăng kí tài khoản mới</a></p>
 				</div>
@@ -36,4 +33,3 @@
 		</div>
 	</div>
 </div>
-<!-- <app-footer></app-footer> -->
