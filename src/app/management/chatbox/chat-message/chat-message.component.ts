@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 
 import { UsersService } from './../user/users.service';
 import { ThreadsService } from './../thread/threads.service';
-import { MessagesService } from './../message/messages.service';
+// import { MessagesService } from './../message/messages.service';
 
 import { Message } from './../message/message.model';
 import { Thread } from './../thread/thread.model';

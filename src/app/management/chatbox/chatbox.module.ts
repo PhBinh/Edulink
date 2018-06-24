@@ -7,7 +7,7 @@ import { HttpModule } from '@angular/http';
 
 import { UsersService } from './user/users.service';
 import { ThreadsService } from './thread/threads.service';
-import { MessagesService } from './message/messages.service';
+// import { MessagesService } from './message/messages.service';
 
 import { ChatMessageComponent } from './chat-message/chat-message.component';
 import { ChatThreadComponent } from './chat-thread/chat-thread.component';
@@ -34,7 +34,7 @@ import { FromNowPipe } from './pipes/from-now.pipe';
     HttpModule
   ],
   providers: [
-    MessagesService, ThreadsService, UsersService
+     ThreadsService, UsersService
   ],
 
   bootstrap: [AppComponent]

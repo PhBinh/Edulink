@@ -2,7 +2,7 @@
 import { User } from '../user/user.model';
 import { Thread } from '../thread/thread.model';
 import { Message } from '../message/message.model';
-import { MessagesService } from '../message/messages.service';
+// import { MessagesService } from '../message/messages.service';
 import { ThreadsService } from '../thread/threads.service';
 import { UsersService } from '../user/users.service';
 import * as moment from 'moment';
@@ -53,81 +53,81 @@ const initialMessages: Array<Message> = [
 ];
 
 export class ChatExampleData {
-  static init(messagesService: MessagesService,
+  static init(
               threadsService: ThreadsService,
               UsersService: UsersService): void {
 
     // TODO make `messages` hot
-    messagesService.messages.subscribe(() => ({}));
+    // messagesService.messages.subscribe(() => ({}));
 
     // set "Juliet" as the current user
     UsersService.setCurrentUser(me);
 
     // create the initial messages
-    initialMessages.map( (message: Message) => messagesService.addMessage(message) );
+    // initialMessages.map( (message: Message) => messagesService.addMessage(message) );
 
     threadsService.setCurrentThread(tEcho);
 
-    this.setupBots(messagesService);
+    // this.setupBots(messagesService);
   }
 
-  static setupBots(messagesService: MessagesService): void {
+  // static setupBots(messagesService: MessagesService): void {
 
-    // echo bot
-    messagesService.messagesForThreadUser(tEcho, echo)
-      .forEach( (message: Message): void => {
-        messagesService.addMessage(
-          new Message({
-            author: echo,
-            text: message.text,
-            thread: tEcho
-          })
-        );
-      },
-                null);
-
-
-    // reverse bot
-    messagesService.messagesForThreadUser(tRev, rev)
-      .forEach( (message: Message): void => {
-        messagesService.addMessage(
-          new Message({
-            author: rev,
-            text: message.text.split('').reverse().join(''),
-            thread: tRev
-          })
-        );
-      },
-                null);
-
-    // waiting bot
-    messagesService.messagesForThreadUser(tWait, wait)
-      .forEach( (message: Message): void => {
-
-        let waitTime: number = parseInt(message.text, 10);
-        let reply: string;
-
-        if (isNaN(waitTime)) {
-          waitTime = 0;
-          reply = `I didn\'t understand ${message.text}. Try sending me a number`;
-        } else {
-          reply = `I waited ${waitTime} seconds to send you this.`;
-        }
-
-        setTimeout(
-          () => {
-            messagesService.addMessage(
-              new Message({
-                author: wait,
-                text: reply,
-                thread: tWait
-              })
-            );
-          },
-          waitTime * 1000);
-      },
-                null);
+  //   // echo bot
+  //   messagesService.messagesForThreadUser(tEcho, echo)
+  //     .forEach( (message: Message): void => {
+  //       messagesService.addMessage(
+  //         new Message({
+  //           author: echo,
+  //           text: message.text,
+  //           thread: tEcho
+  //         })
+  //       );
+  //     },
+  //               null);
 
 
-  }
+  //   // reverse bot
+  //   messagesService.messagesForThreadUser(tRev, rev)
+  //     .forEach( (message: Message): void => {
+  //       messagesService.addMessage(
+  //         new Message({
+  //           author: rev,
+  //           text: message.text.split('').reverse().join(''),
+  //           thread: tRev
+  //         })
+  //       );
+  //     },
+  //               null);
+
+  //   // waiting bot
+  //   messagesService.messagesForThreadUser(tWait, wait)
+  //     .forEach( (message: Message): void => {
+
+  //       let waitTime: number = parseInt(message.text, 10);
+  //       let reply: string;
+
+  //       if (isNaN(waitTime)) {
+  //         waitTime = 0;
+  //         reply = `I didn\'t understand ${message.text}. Try sending me a number`;
+  //       } else {
+  //         reply = `I waited ${waitTime} seconds to send you this.`;
+  //       }
+
+  //       setTimeout(
+  //         () => {
+  //           messagesService.addMessage(
+  //             new Message({
+  //               author: wait,
+  //               text: reply,
+  //               thread: tWait
+  //             })
+  //           );
+  //         },
+  //         waitTime * 1000);
+  //     },
+  //               null);
+
+
+  // }
 }

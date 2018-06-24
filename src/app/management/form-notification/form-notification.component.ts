@@ -2,7 +2,6 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-form-notification',

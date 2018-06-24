@@ -13,7 +13,7 @@ import { UsersService } from '../user/users.service';
 import { Thread } from '../thread/thread.model';
 import { ThreadsService } from '../thread/threads.service';
 import { Message } from '../message/message.model';
-import { MessagesService } from '../message/messages.service';
+// import { MessagesService } from '../message/messages.service';
 
 @Component({
   selector: 'app-chat-window',
@@ -27,7 +27,7 @@ export class ChatWindowComponent implements OnInit {
   draftMessage: Message;
   currentUser: User;
 
-  constructor(public messagesService: MessagesService,
+  constructor(
               public threadsService: ThreadsService,
               // tslint:disable-next-line:no-shadowed-variable
               public UsersService: UsersService,
@@ -69,7 +69,7 @@ export class ChatWindowComponent implements OnInit {
     m.author = this.currentUser;
     m.thread = this.currentThread;
     m.isRead = true;
-    this.messagesService.addMessage(m);
+    // this.messagesService.addMessage(m);
     this.draftMessage = new Message();
   }
 

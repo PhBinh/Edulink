@@ -20,7 +20,7 @@ const managementRoutes: Routes = [
         component: FormNotificationComponent
       },
       {
-        path: '',
+        path: 'calendar',
         component: RestComponent
       },
       {
