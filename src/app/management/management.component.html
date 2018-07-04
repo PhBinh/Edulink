@@ -26,23 +26,26 @@
           <!-- sidebar menu -->
           <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
             <div class="menu_section">
-              <h3>General</h3>
+              <h3>Menu</h3>
               <ul class="nav side-menu">
                 
-                <li><a><i class="fa fa-home"></i> Dashboard <span class="fa fa-chevron-down"></span></a>
+                <li><a><i class="fa fa-child"></i> Bé <span class="fa fa-chevron-down"></span></a>
                   <ul class="nav child_menu">
-                    <li><a routerLink="/main/role/index" routerLinkActive="active">Thông báo gần đây</a></li>
-                    <li><a routerLink="/main/role/index" routerLinkActive="active">Nhóm</a></li>
-                    <li><a routerLink="/main/function/index" routerLinkActive="active">Chức năng</a></li>
-                    <li><a routerLink="/main/user/index" routerLinkActive="active">Danh sách người dùng</a></li>
+                    <li><a routerLink="/main/role/index" routerLinkActive="active">Nhật Ký</a></li>
+                    <li><a routerLink="/main/role/index" routerLinkActive="active">Học Tập</a></li>
+                    <li><a routerLink="/main/function/index" routerLinkActive="active">Sức Khoẻ</a></li>
                   </ul>
                 </li>
-                <li><a routerLink="/main/ecg-history/index" ><i class="fa fa-address-card-o"></i>Lịch sử đo ECG</a></li>
-                <li><a routerLink="/main/ecg/index" ><i class="fa fa-heartbeat"></i>ECG</a></li>
-                <li><a routerLink="/main/profile/index" ><i class="fa fa-address-book-o"></i>Thông tin cá nhân</a></li>
-                  <li><a routerLink="/main/contact/index"><i class="fa fa-list-alt"></i>Danh sách liên hệ</a></li>
-                <li><a><i class="fa fa-map-marker"></i>Bản đồ định vị</a>
+                <li><a><i class="fa fa-american-sign-language-interpreting"></i> Lớp <span class="fa fa-chevron-down"></span></a>
+                  <ul class="nav child_menu">
+                    <li><a routerLink="/main/role/index" routerLinkActive="active">Thông Báo</a></li>
+                    <li><a routerLink="/main/role/index" routerLinkActive="active">Ngoại Khoá</a></li>
+                  </ul>
                 </li>
+                <li><a routerLink="/main/ecg-history/index" ><i class="fa fa-image"></i>Hình Ảnh Lớp</a></li>
+                <li><a routerLink="/main/ecg/index" ><i class="fa fa-comments"></i>Tin Nhắn</a></li>
+                <li><a routerLink="/main/profile/index" ><i class="fa fa-user-circle"></i>Thông tin cá nhân</a></li>
+                <li><a routerLink="/main/contact/index"><i class="fa fa-list-alt"></i>Danh sách liên hệ</a></li>
               </ul>
             </div>
             </div>
@@ -165,7 +168,7 @@
   
       <!-- page content -->
       <div class="right_col" role="main">
-        <div class="">
+        <div class="content">
           <router-outlet></router-outlet>
         </div>
       </div>

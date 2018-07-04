@@ -1,24 +1,30 @@
-import { RouterModule, Route } from '@angular/router';
 import { ManagementModule } from './../management.module';
 import { NgModule } from '@angular/core';
 import { FormNotificationComponent } from './form-notification.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
-// import {BsDatepickerModule} from 'ngx-bootstrap/datepicker';
-// import { TimepickerModule } from 'ngx-bootstrap/timepicker';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatChipsModule } from '@angular/material/chips';
 
 @NgModule({
   imports: [
     ManagementModule,
     FormsModule,
     ReactiveFormsModule,
-    // BsDatepickerModule.forRoot(),
-    CommonModule
+    CommonModule,
+    MatInputModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatChipsModule,
+    BrowserAnimationsModule
   ],
   declarations: [
-    FormNotificationComponent,
+    FormNotificationComponent
   ],
 })
 

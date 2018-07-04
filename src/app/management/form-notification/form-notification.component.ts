@@ -10,21 +10,23 @@ import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
 })
 
 export class FormNotificationComponent implements OnInit {
-
   notificationForm: FormGroup;
-  formSubmitted = false;
-  constructor(notificationFormBuilder: FormBuilder) {
-    this.notificationForm = notificationFormBuilder.group({
-      title: [''],
-      description: [''],
-      target: '',
-    });
+  // formSubmitted = false;
+  constructor(private notificationFormBuilder: FormBuilder) {
+    
    }
 
-  onSubmit(value: string): void {
-    console.log(value);
-  }
+  // onSubmit(value: string): void {
+  //   console.log(value);
+  // }
   ngOnInit() {
+    this.notificationForm = this.notificationFormBuilder.group({
+      title: '',
+      description: ''
+    });
+
+   
+    this.notificationForm.valueChanges.subscribe(console.log)
       // this.NotificationForm = this.notificationFormBuilder.group({
       //   title: ['', Validators.required, Validators.minLength(5)],
       //   // titles: this.notificationFormHolderBuilder.array([

@@ -1,156 +1,19 @@
-  <!DOCTYPE html>
-  <html lang="en">
-  <title>W3.CSS Template</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
-      
-  <style>
-  html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
-  .form-group {
-    margin-bottom: 15px;
-    margin-left: 15px;
-}
-  </style>
+<form [formGroup]="notificationForm">
 
-  <body class="w3-light-grey">
-      <!-- <app-topbar></app-topbar>
-      <app-sidebar></app-sidebar> -->
-  <div class="w3-main" style="margin-left:300px;margin-top:43px;">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-11">
-          <div class="margin-20">
-            <h4>Đăng thông báo</h4>
-            <form [formGroup]="notificationForm"  (ngSubmit)="onSubmit(notificationForm.value)">
-              
-              <div class="form-group">
-                <!-- <label for="title">Tiêu đề</label>
-                <input type="text" class="form-control" formControlName="title" placeholder="Tiêu đề..."> -->
-                
-                <label for="title">Tiêu đề</label>
-                <input type="text"
-                       id="title"
-                       placeholder="Tiêu đề"
-                       [formControl]="notificationForm.controls['title']">
-                <!-- <small *ngIf="!myNotificationFormHolder.controls.name.valid" class="text-danger">
-                  Tiều đề (tối thiểu 5 kí tự).
-                </small> -->
-                <div>
-                <label for="description" >Miêu tả</label>
-                <!-- <input type="text" class="form-control" formControlName="description" placeholder="Miêu tả..."> -->
-                <textarea type="text" rows="4" cols="50" [formControl]="notificationForm.controls['description']" placeholder="Miêu tả..."> 
-                </textarea>
+  <!-- This Line For Debugs: -->
+  <!-- Value: {{ notificationForm.value | json }} -->
 
-              </div>
-                <form action="http://www.example.com/upload.php" method="post">
-                  <p>Upload pdf file:</p>
-                  <input type="file" name="pdf_file" />
-                </form>
-                <label class="form-control" >Đối tượng</label>
-                <select id="doi_tuong" formControlName="target" name="Đối tượng">
-                  <option value="Toàn trường">Toàn trường</option>
-                  <option value="Lớp">Lớp</option>
-                  <option value="Cá nhân">Cá nhân</option>
-                </select>
-                <form action="/action_page.php">
-  
-                </form>
-              </div>
-              <!--Schedules Times Intervals-->
-              <div formArrayName="time">
-                
-                <div *ngFor="let time of notificationForm.controls.time.controls; let i=index" class="panel panel-default">
-                  <div class="panel-heading">
-                    <span>Chọn thời gian {{i + 1}}</span>
-                    <span class="glyphicon glyphicon-remove pull-right" *ngIf="notificationForm.controls.time.controls.length > 1" (click)="removeTitle(i)"></span>
-                  </div> 
-                  <!-- Date-time form -->
-                  <!-- <div class="form-group">
-                      <input id="date" name="date" [(ngModel)]="date"
-                              type="text" bsDatepicker class="form-control" />
-                  </div> -->
-                  
-                  <div class="form-group">
-                      <label class="label-control">Datetime Picker</label>
-                      <input type="text" class="form-control datetimepicker" value="10/05/2016">
-                  </div>
-                  <!-- <div class="panel-body" [formGroupName]="i">
-                  </div> -->
-                </div>
-              </div>
-  
-              <div class="margin-20">
-                <button  style="cursor: default">
-                  Thêm khoảng thời gian 
-                </button>
-              </div>
-  
-              <div class="form-group">
-                <button (click)="onFormSubmit" type="submit" class="btn btn-primary pull-right" [disabled]="false">Submit</button>
-                <!-- <button (click)="postNotification" type="submit" class="btn btn-primary pull-right" [disabled]="!myForm.valid">Submit</button> -->
-              </div>
-              <div class="clearfix"></div>
-  
-              <!-- <div class="margin-20">
-              <div>myForm details:-</div>
-              <pre>Is myForm valid?: <br>{{myForm.valid | json}}</pre>
-              <pre>form value: <br>{{myForm.value | json}}</pre>
-            </div> -->
-            </form>
-          </div>
-     
-          <!-- <div class="ui raised segment">
-            <h2 class="ui header">Đăng thông báo</h2>
-            <form [formGroup]="notificationForm"
-                  (ngSubmit)="onSubmit(notificationForm.value)"
-                  class="ui form">
-              <div class="field">
-                <label for="title">Tiêu đề</label>
-                <input type="text"
-                       id="title"
-                       placeholder="Tiêu đề"
-                       [formControl]="notificationForm.controls['title']">
-              </div>
-              <div class="field">
-                <label for="description">Mô tả</label>
-                <input type="text"
-                       id="description"
-                       placeholder="Mô tả"
-                       [formControl]="notificationForm.controls['description']">
-              </div>
-              <div class="field">
-                <label for="target">Đối tượng</label>
-                <input type="text"
-                       id="target"
-                       placeholder="Đối tượng"
-                       [formControl]="notificationForm.controls['target']">
-              </div>
-              <button type="submit" class="ui button">Submit</button>
-            </form>
-          </div> -->
-        </div>
-      </div>
-    </div>
-    </div>
-  <!-- <router-outlet></router-outlet>   -->
-    
-  <!-- </router-outlet> -->
-    <script src="./assets/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="./assets/js/material-kit.js?v=2.0.2"></script>
-    <script>
-        $(document).ready(function() {
+  <hr>
 
-            //init DateTimePickers
-            materialKit.initFormExtendedDatetimepickers();
+  <mat-form-field>
+      <input matInput placeholder="Tiêu đề" formControlName="title">
+  </mat-form-field>
 
-            // Sliders Init
-            materialKit.initSliders();
-        });
-    </script>
-  </body>
+  <mat-form-field>
+      <textarea matInput placeholder="Miêu tả" formControlName="description"></textarea>
+  </mat-form-field>
 
-  </html>
+  <input class="ng-hide" id="input-file-id" multiple type="file" />
+  <label for="input-file-id" class="md-button md-raised md-primary">Choose Files</label>
+
+</form>
