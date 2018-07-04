@@ -13,7 +13,6 @@ import { LoginModule } from './homepage/login/login.module';
 import { HomepageModule } from './homepage/homepage.module';
 import { ManagementModule } from './management/management.module';
 import { FormNotificationModule } from './management/form-notification/form-notification.module';
-import { ChatboxModule } from './management/chatbox/chatbox.module';
 
 //FireBase:
 //Authentication:
@@ -29,7 +28,6 @@ import { AuthService } from './services/auth.service';
     AppComponent
   ],
   imports: [
-    ChatboxModule,
     FormNotificationModule,
     HomepageModule,
     LoginModule,

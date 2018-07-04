@@ -4,7 +4,7 @@ import * as firebase from 'firebase/app';
 @Component({
   selector: 'app-login-form',
   templateUrl: './login-form.component.html',
-  styleUrls: ['./login-form.component.css']
+  styleUrls: ['./login-form.component.css', './../../../../../node_modules/materialize-css/dist/css/materialize.min.css']
 })
 export class LoginFormComponent implements OnInit {
   constructor(private authService: AuthService) { 
