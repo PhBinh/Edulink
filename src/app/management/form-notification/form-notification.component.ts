@@ -1,7 +1,13 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule,ViewChild } from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
+import { FileUploader } from 'ng2-file-upload';
+import {MatButtonModule} from '@angular/material/button';
+import { ModalDirective } from 'ngx-bootstrap/modal';
+
+
+const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 
 @Component({
   selector: 'app-form-notification',
@@ -10,6 +16,30 @@ import { FormGroup, FormArray, FormBuilder } from '@angular/forms';
 })
 
 export class FormNotificationComponent implements OnInit {
+  public uploader:FileUploader = new FileUploader({url: URL});
+  public hasBaseDropZoneOver:boolean = false;
+  public hasAnotherDropZoneOver:boolean = false;
+  public entity: any;
+  @ViewChild('modalAddEdit') public modalAddEdit: ModalDirective;
+  public dateOptions: any = {
+    locale: { format: 'DD/MM/YYYY' },
+    alwaysShowCalendars: false,
+    singleDatePicker: true
+  };
+ 
+  public fileOverBase(e:any):void {
+    this.hasBaseDropZoneOver = e;
+  }
+ 
+  public fileOverAnother(e:any):void {
+    this.hasAnotherDropZoneOver = e;
+  }
+
+  showAddModal() {
+    this.entity = {};
+    this.modalAddEdit.show();
+  }
+
   notificationForm: FormGroup;
   // formSubmitted = false;
   constructor(private notificationFormBuilder: FormBuilder) {

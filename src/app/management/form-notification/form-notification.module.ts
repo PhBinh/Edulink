@@ -9,6 +9,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatChipsModule } from '@angular/material/chips';
+import { FileUploadModule } from 'ng2-file-upload';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import { Daterangepicker } from 'ng2-daterangepicker';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 @NgModule({
   imports: [
@@ -21,7 +27,12 @@ import { MatChipsModule } from '@angular/material/chips';
     MatSelectModule,
     MatCheckboxModule,
     MatChipsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FileUploadModule,
+    MatCardModule,
+    MatListModule,
+    ModalModule.forRoot(),
+    Daterangepicker
   ],
   declarations: [
     FormNotificationComponent
